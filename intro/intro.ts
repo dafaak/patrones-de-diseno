@@ -43,3 +43,74 @@ console.log(res);
 res = operation((num1: number, num2: number) => num1 * num2, 4, 2);
 
 console.log(res);
+
+
+class Drink {
+    private name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    info(): string {
+        return this.name;
+    }
+}
+
+const drink = new Drink('Tesalia');
+
+console.log(drink.info());
+
+interface Product {
+    price: number;
+
+    getPrice(): string;
+}
+
+
+class Beer extends Drink implements Product {
+    private alcohol: number;
+    price: number;
+
+    constructor(name: string, alcohol: number, price: number) {
+        super(name);
+        this.alcohol = alcohol;
+        this.price = price;
+    }
+
+    getPrice(): string {
+        return "$" + this.price
+    }
+
+    info(): string {
+        return super.info() + " " + this.alcohol
+    }
+
+}
+
+const beer = new Beer('Budweiser', 7, 2);
+
+console.log(beer.info());
+
+class Snack implements Product {
+    name: string;
+    price: number;
+
+    constructor(name: string, price: number) {
+        this.name = name;
+        this.price = price;
+    }
+
+    getPrice() {
+        return "El precio es $" + this.price;
+    }
+}
+
+const snack = new Snack('Ruffles', 1);
+
+console.log(snack.getPrice());
+
+const products: Product[] = [];
+
+products.push(beer);
+products.push(snack);
