@@ -19,11 +19,24 @@ let division = (num1: number, num2: number) => num1 / num2;
 ```
 
 #### SINGLETON
+
 busca tener una sola instancia de una clase
 
 #### STRATEGY
+
 se centra en tener una clase contexto que tengo una estrategia y una accion.
 
 #### OBSERVER
+
 Teniendo un objeto que puede tener estados, y estos son propiedades, cuando una propiedad cambie
 se va a notificar a un conjunto de observadores
+
+#### DECORATOR
+
+El patrón Decorator responde a la necesidad de añadir dinámicamente funcionalidad
+a un Objeto. Esto nos permite no tener que crear sucesivas clases que hereden de la primera
+incorporando la nueva funcionalidad, sino otras que la implementan y se asocian a la primera.
+
+No se puede heredar de dos clases.
+
+envolver funcionanmiento sobre funcionamiento;
